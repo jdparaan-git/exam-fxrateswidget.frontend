@@ -7,7 +7,10 @@ FXRates widget angular frontend
 
 ## How to Run
 
-1. First, setup the backend api [see here](https://github.com/jdparaan-git/exam-fxrateswidget.backend/blob/main/README.md)
+1. First, setup the FXRates Widget Backend Api ([see here](https://github.com/jdparaan-git/exam-fxrateswidget.backend/blob/main/README.md))
 2. `git clone https://github.com/jdparaan-git/exam-fxrateswidget.frontend.git`
 3. `npm install`
 4. `ng serve`
+
+## TODO:
+- Add Unit Tests
