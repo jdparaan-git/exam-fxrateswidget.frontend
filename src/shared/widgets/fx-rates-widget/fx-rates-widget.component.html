@@ -1,0 +1,70 @@
+<div class="card text-white bg-primary mb-3" style="max-width: 24rem">
+  <div class="card-header">Forex Calculator</div>
+
+  <div class="card-body">
+    <div class="row mx-n1">
+      <div class="col px-1">
+        <select
+          [(ngModel)]="buyCurrency"
+          (change)="buyCurrencyChanged()"
+          required
+          class="form-control"
+        >
+          <option *ngFor="let item of options">{{ item }}</option>
+        </select>
+      </div>
+      <div class="col px-1">
+        <input
+          (ngModelChange)="buyAmountChanged($event)"
+          [ngModelOptions]="{ updateOn: 'blur' }"
+          [ngModel]="buyAmount | number: '1.3-3'"
+          required
+          type="number"
+          class="form-control"
+          placeholder="-.---"
+          aria-label="-.---"
+          [disabled]="loading"
+        />
+      </div>
+    </div>
+    <div class="row mx-n1 mt-2">
+      <div class="col px-1">
+        <select
+          [(ngModel)]="sellCurrency"
+          (change)="sellCurrencyChanged()"
+          required
+          class="form-control"
+          [disabled]="loading"
+        >
+          <option *ngFor="let item of options">{{ item }}</option>
+        </select>
+      </div>
+      <div class="col px-1">
+        <input
+          (ngModelChange)="sellAmountChanged($event)"
+          [ngModelOptions]="{ updateOn: 'blur' }"
+          [ngModel]="sellAmount | number: '1.3-3'"
+          required
+          type="number"
+          class="form-control"
+          placeholder="-.---"
+          aria-label="-.---"
+          [disabled]="loading"
+        />
+      </div>
+    </div>
+
+    <div *ngIf="!loading && conversionInfoText" class="text-right">
+      <small [ngClass]="{ 'text-white bg-danger': error }">
+        {{ conversionInfoText }}
+      </small>
+    </div>
+  </div>
+
+  <div class="card-footer">
+    <i
+      >Due to https://exchangeratesapi.io/ free-access-key restriction, the only
+      working conversion right now is EUR.</i
+    >
+  </div>
+</div>
