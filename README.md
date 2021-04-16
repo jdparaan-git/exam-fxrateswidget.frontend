@@ -11,6 +11,7 @@ FXRates widget angular frontend
 2. `git clone https://github.com/jdparaan-git/exam-fxrateswidget.frontend.git`
 3. `npm install`
 4. `ng serve`
+5. Open `http://localhost:4200` on your browser.
 
 ## TODO:
 - Add Unit Tests
